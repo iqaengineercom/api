@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Професійний курс з розробки API | Навчання з нуля</title>
-    <meta name="description" content="Повноцінний курс зі створення API: REST, GraphQL, WebSockets. Групові та індивідуальні заняття з працевлаштуванням">
+    <title>Курс тестування API для тестувальників | IQA Engineer</title>
+    <meta name="description" content="Професійний курс тестування API: живі заняття, практичні завдання, підготовка до реальних проектів. Тривалість 1 місяць">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Variables */
         :root {
             --primary: #2A2D7C;
             --secondary: #00C897;
@@ -16,7 +15,6 @@
             --light: #F9F9F9;
         }
 
-        /* Reset */
         * {
             margin: 0;
             padding: 0;
@@ -30,7 +28,6 @@
             overflow-x: hidden;
         }
 
-        /* Utility Classes */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -41,7 +38,6 @@
             padding: 100px 0;
         }
 
-        /* Parallax Effect */
         .parallax {
             position: relative;
             background-attachment: fixed;
@@ -60,167 +56,28 @@
             background: rgba(0,0,0,0.6);
         }
 
-        /* Hero Section */
-        #hero.parallax {
-            height: 100vh;
-            background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        .logo {
+            width: 200px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
             color: white;
+            text-align: center;
+            padding: 150px 0;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        /* Pricing Section */
-        #pricing {
-            background: var(--light);
-        }
-
-        .pricing-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .price-card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            width: 350px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .price-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--secondary);
-        }
-
-        .price {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin: 20px 0;
-            font-weight: 700;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding: 100px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background: var(--secondary);
-        }
-
-        .timeline-item {
-            width: 50%;
-            padding: 20px;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        /* Testimonials */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        /* FAQ */
-        .faq-item {
-            margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .faq-question {
-            padding: 20px 0;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        /* Animations */
-        [data-aos] {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        [data-aos].aos-animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Buttons */
         .btn {
             display: inline-block;
             padding: 15px 40px;
@@ -241,10 +98,142 @@
             background: #00a37c;
         }
 
-        /* Responsive */
+        .contact-info {
+            margin-top: 30px;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .skills-section {
+            background: var(--light);
+        }
+
+        .skills-list {
+            columns: 2;
+            margin: 30px 0;
+        }
+
+        .skills-list li {
+            margin-bottom: 15px;
+            list-style: none;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .skills-list li::before {
+            content: '✔️';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 100px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--secondary);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 30px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+
+        form input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
         @media (max-width: 768px) {
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .timeline::before {
@@ -268,148 +257,159 @@
                 background: var(--secondary);
                 border-radius: 50%;
             }
+
+            .skills-list {
+                columns: 1;
+            }
+        }
+
+        [data-aos] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        [data-aos].aos-animate {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section id="hero" class="parallax">
-        <div class="parallax-overlay"></div>
-        <div class="hero-content container">
-            <h1 data-aos="fade-up">Професійна розробка API</h1>
-            <p data-aos="fade-up" data-aos-delay="200">З нуля до Senior-розробника за 2 місяці</p>
-            <button class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">Розпочати навчання</button>
-        </div>
-    </section>
+    <img src="https://iqaengineer.com/wp-content/uploads/2020/11/xlogo_new.png.pagespeed.ic.ylUIboQLbb.png" alt="IQA Engineer Logo" class="logo">
 
-    <!-- Features -->
-    <section class="section-padding">
-        <div class="container">
-            <h2 data-aos="fade-up">Наші переваги</h2>
-            <div class="features-grid">
-                <div class="feature-card" data-aos="fade-up">
-                    <h3>🚀 Інтенсивне навчання</h3>
-                    <p>80% практики та реальні проекти</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3>👨💻 Персональний ментор</h3>
-                    <p>Індивідуальні консультації та перевірка коду</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                    <h3>🎓 Гарантія працевлаштування</h3>
-                    <p>Допомога з резюме та співбесідами</p>
-                </div>
+    <section id="hero" class="parallax" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')">
+        <div class="parallax-overlay"></div>
+        <div class="hero-content">
+            <h1 data-aos="fade-up">Курс тестування API для тестувальників</h1>
+            <p data-aos="fade-up" data-aos-delay="200">1 місяць інтенсивних живих занять</p>
+            <button class="btn btn-primary" onclick="showForm()" data-aos="fade-up" data-aos-delay="400">Записатися зараз</button>
+            <div class="contact-info" data-aos="fade-up" data-aos-delay="600">
+                <a href="tel:+380631234567">📞 +38 (068) 804-65-65</a>
+                <a href="tel:+380971234567">📞 +38 (063) 642-10-11</a>
             </div>
         </div>
     </section>
 
-    <!-- Timeline -->
-    <section class="timeline section-padding">
+    <section class="section-padding skills-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Що ви навчитесь</h2>
+            <ul class="skills-list">
+                <li data-aos="fade-right">Тестування REST API за допомогою Postman</li>
+                <li data-aos="fade-right" data-aos-delay="100">Автоматизація тестів з використанням JS</li>
+                <li data-aos="fade-right" data-aos-delay="200">Робота з Swagger/OpenAPI документацією</li>
+                <li data-aos="fade-right" data-aos-delay="300">Тестування GraphQL API</li>
+                <li data-aos="fade-right" data-aos-delay="400">Створення тестових сценаріїв</li>
+                <li data-aos="fade-right" data-aos-delay="500">Аналіз логів та дебаг помилок</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section-padding">
         <div class="container">
             <h2 data-aos="fade-up">Програма курсу</h2>
-            <div class="timeline-item" data-aos="fade-right">
-                <h3>Тиждень 1-2: Основи REST API</h3>
-                <p>HTTP методи, статус коди, автентифікація</p>
-            </div>
-            <div class="timeline-item" data-aos="fade-left">
-                <h3>Тиждень 3-4: Розширена функціональність</h3>
-                <p>Пагінація, кешування, документація Swagger</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="section-padding">
-        <div class="container">
-            <h2 data-aos="fade-up">Варіанти навчання</h2>
-            <div class="pricing-cards">
-                <div class="price-card" data-aos="fade-up">
-                    <h3>Група до 5 осіб</h3>
-                    <div class="price">4 500 грн</div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <h3>Тиждень 1: Основи API</h3>
                     <ul>
-                        <li>✓ 12 практичних занять</li>
-                        <li>✓ Доступ до матеріалів</li>
-                        <li>✓ Чат з ментором</li>
+                        <li>Архітектура REST API</li>
+                        <li>Робота з Postman</li>
+                        <li>HTTP методи та статусні коди</li>
+                        <li>Створення перших тестів</li>
                     </ul>
-                    <button class="btn btn-primary">Обрати</button>
                 </div>
-                <div class="price-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Індивідуальний</h3>
-                    <div class="price">5 500 грн</div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <h3>Тиждень 2: Поглиблене тестування</h3>
                     <ul>
-                        <li>✓ Персональний графік</li>
-                        <li>✓ 16 практичних занять</li>
-                        <li>✓ Підтримка 24/7</li>
+                        <li>Автентифікація (OAuth2, JWT)</li>
+                        <li>Тестування крайніх випадків</li>
+                        <li>Валідація JSON схем</li>
                     </ul>
-                    <button class="btn btn-primary">Обрати</button>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <h3>Тиждень 3: Автоматизація</h3>
+                    <ul>
+                        <li>Написання скриптів на JS</li>
+                        <li>Використання Postman</li>
+                        <li>Інтеграція з CI/CD</li>
+                    </ul>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <h3>Тиждень 4: Реальні проекти</h3>
+                    <ul>
+                        <li>Робота з реальними API</li>
+                        <li>Створення звітності</li>
+                        <li>Підготовка до інтерв'ю</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
     <section class="section-padding">
         <div class="container">
-            <h2 data-aos="fade-up">Відгуки студентів</h2>
+            <h2 data-aos="fade-up">Відгуки випускників</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card" data-aos="fade-up">
-                    <h4>Андрій, Backend Developer</h4>
-                    <p>"Найкращий курс з API, який я проходив. Реальна практика та корисні кейси."</p>
+                    <h4>Ольга, Manual QA</h4>
+                    <p>"Курс дав чітке розуміння принципів роботи API. Тепер впевнено проводжу тестування мікросервісів."</p>
                 </div>
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                    <h4>Олена, Team Lead</h4>
-                    <p>"Ідеальне поєднання теорії та практики. Рекомендую всім розробникам!"</p>
+                    <h4>Андрій, Automation QA</h4>
+                    <p>"Найкращий практичний курс. Реальні кейси з робочих проектів."</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="section-padding">
         <div class="container">
             <h2 data-aos="fade-up">Часті запитання</h2>
             <div class="faq-list">
                 <div class="faq-item" data-aos="fade-up">
                     <div class="faq-question">
-                        <h4>Який рівень підготовки потрібен?</h4>
+                        <h4>Які вимоги до учасників?</h4>
                         <span>▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Базове знання мови програмування (Python/JavaScript) та основ веб-розробки.</p>
+                        <p>Базове розуміння тестування ПЗ та основи роботи з HTTP протоколом.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question">
+                        <h4>Чи є домашні завдання?</h4>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Так, після кожного заняття ви отримуєте практичні завдання з перевіркою ментором.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question">
+                        <h4>Чи видається сертифікат?</h4>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Так, після успішного завершення курсу ви отримуєте сертифікат у PDF форматі.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="section-padding" style="background: var(--dark); color: white;">
-        <div class="container">
-            <p data-aos="fade-up">© 2024 Професійний курс API. Всі права захищені</p>
-        </div>
-    </footer>
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="orderForm">
+        <h3>Заявка на курс</h3>
+        <form id="courseForm">
+            <input type="text" placeholder="Ваше ім'я" required>
+            <input type="tel" placeholder="Телефон" required>
+            <input type="email" placeholder="Email" required>
+            <button type="submit" class="btn btn-primary">Надіслати заявку</button>
+        </form>
+    </div>
 
     <script>
-        // Parallax Effect
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.parallax');
-            
-            parallaxElements.forEach(element => {
-                const speed = 0.5;
-                element.style.backgroundPositionY = -(scrolled * speed) + 'px';
-            });
-        });
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(item => {
-            item.addEventListener('click', () => {
-                const answer = item.nextElementSibling;
-                answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + 'px';
-            });
-        });
-
-        // Scroll Animations
+        // Анімації при скролі
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -418,8 +418,39 @@
             });
         });
 
-        document.querySelectorAll('[data-aos]').forEach(el => {
-            observer.observe(el);
+        document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
+
+        // Форма зворотного зв'язку
+        function showForm() {
+            document.getElementById('modalOverlay').style.display = 'block';
+            document.getElementById('orderForm').style.display = 'block';
+        }
+
+        document.getElementById('modalOverlay').addEventListener('click', function() {
+            this.style.display = 'none';
+            document.getElementById('orderForm').style.display = 'none';
+        });
+
+        document.getElementById('courseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Дякуємо! Ваша заявка прийнята. Ми звʼяжемося з вами протягом дня.');
+            document.getElementById('modalOverlay').style.display = 'none';
+            document.getElementById('orderForm').style.display = 'none';
+        });
+
+        // Аккордеон для FAQ
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + 'px';
+            });
+        });
+
+        // Параллакс ефект
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.getElementById('hero');
+            parallax.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
         });
     </script>
 </body>
