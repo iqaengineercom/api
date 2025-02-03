@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс по API | Навчання розробці API | Від 4500 грн</title>
+    <meta name="description" content="Професійний курс з розробки API: групові та індивідуальні заняття. Практика з першого дня, сертифікат, допомога з працевлаштуванням.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #2d3436;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: #2d3436;
+            margin-bottom: 1rem;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -10%;
+            right: -10%;
+            height: 100px;
+            background: white;
+            transform: rotate(-2deg);
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .pricing-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .price-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            width: 350px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #00b894;
+        }
+
+        .price {
+            font-size: 2.8rem;
+            color: #2d3436;
+            margin: 20px 0;
+            font-weight: 700;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d3436;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #00b894;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #009d7a;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .price-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="animate">🔥 Курс по API: Стань експертом за 2 місяці!</h1>
+            <p class="animate">Навчіться створювати та інтегрувати API професійного рівня</p>
+            <button class="btn btn-primary animate" style="margin-top: 30px;">Розпочати навчання</button>
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2>Чому наш курс?</h2>
+            <div class="features-grid">
+                <div class="feature-card animate">
+                    <h3>👨💻 Практичний досвід</h3>
+                    <p>Реальні проекти та кейси з розробки API</p>
+                </div>
+                <div class="feature-card animate">
+                    <h3>🎓 Сертифікат</h3>
+                    <p>Офіційне підтвердження ваших навичок</p>
+                </div>
+                <div class="feature-card animate">
+                    <h3>🤝 Підтримка</h3>
+                    <p>Персональний ментор та спільнота</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <div class="container">
+            <h2>Варіанти навчання</h2>
+            <div class="pricing-cards">
+                <div class="price-card animate">
+                    <h3>Груповий курс</h3>
+                    <div class="price">4 500 грн</div>
+                    <ul style="list-style: none; margin-bottom: 30px;">
+                        <li>✔️ До 5 людей у групі</li>
+                        <li>✔️ 12 практичних занять</li>
+                        <li>✔️ Доступ до матеріалів</li>
+                    </ul>
+                    <button class="btn btn-primary">Обрати</button>
+                </div>
+
+                <div class="price-card animate">
+                    <h3>Індивідуальний</h3>
+                    <div class="price">5 500 грн</div>
+                    <ul style="list-style: none; margin-bottom: 30px;">
+                        <li>✔️ Персональний графік</li>
+                        <li>✔️ 16 практичних занять</li>
+                        <li>✔️ Підтримка 24/7</li>
+                    </ul>
+                    <button class="btn btn-primary">Обрати</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Відгуки випускників</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card animate">
+                    <h4>Андрій, Backend Developer</h4>
+                    <p>"Найкращий курс з API, який я проходив. Реальна практика та корисні кейси."</p>
+                </div>
+                <div class="testimonial-card animate">
+                    <h4>Олена, Team Lead</h4>
+                    <p>"Ідеальне поєднання теорії та практики. Рекомендую всім розробникам!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Часті запитання</h2>
+            <div class="faq-list">
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <h4>Який рівень підготовки потрібен?</h4>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Досвіду програмування на рівні базового синтаксису мови буде достатньо.</p>
+                    </div>
+                </div>
+                <!-- Add more FAQ items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Курси API. Всі права захищені</p>
+            <p>Контакти: example@api-course.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + 'px';
+            });
+        });
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        });
+
+        document.querySelectorAll('.animate').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
