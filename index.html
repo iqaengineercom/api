@@ -3,72 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Курс по API | Навчання розробці API | Від 4500 грн</title>
-    <meta name="description" content="Професійний курс з розробки API: групові та індивідуальні заняття. Практика з першого дня, сертифікат, допомога з працевлаштуванням.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Професійний курс з розробки API | Навчання з нуля</title>
+    <meta name="description" content="Повноцінний курс зі створення API: REST, GraphQL, WebSockets. Групові та індивідуальні заняття з працевлаштуванням">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        /* Variables */
+        :root {
+            --primary: #2A2D7C;
+            --secondary: #00C897;
+            --accent: #FF6B6B;
+            --dark: #2D3436;
+            --light: #F9F9F9;
         }
 
-        /* Global Styles */
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: #2d3436;
+            line-height: 1.7;
+            color: var(--dark);
             overflow-x: hidden;
         }
 
+        /* Utility Classes */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        h1, h2, h3 {
-            color: #2d3436;
-            margin-bottom: 1rem;
+        .section-padding {
+            padding: 100px 0;
         }
 
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
-            color: white;
-            padding: 100px 0;
-            text-align: center;
+        /* Parallax Effect */
+        .parallax {
             position: relative;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
             overflow: hidden;
         }
 
-        .header::after {
-            content: '';
+        .parallax-overlay {
             position: absolute;
-            bottom: -50px;
-            left: -10%;
-            right: -10%;
-            height: 100px;
-            background: white;
-            transform: rotate(-2deg);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
         }
 
-        .header h1 {
-            font-size: 2.8rem;
+        /* Hero Section */
+        #hero.parallax {
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        /* Features */
-        .features {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
+        /* Features Grid */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
@@ -85,10 +102,9 @@
             transform: translateY(-10px);
         }
 
-        /* Pricing */
-        .pricing {
-            padding: 80px 0;
-            background: white;
+        /* Pricing Section */
+        #pricing {
+            background: var(--light);
         }
 
         .pricing-cards {
@@ -114,25 +130,51 @@
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
+            width: 100%;
             height: 4px;
-            background: #00b894;
+            background: var(--secondary);
         }
 
         .price {
-            font-size: 2.8rem;
-            color: #2d3436;
+            font-size: 2.5rem;
+            color: var(--primary);
             margin: 20px 0;
             font-weight: 700;
         }
 
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background: #f8f9fa;
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 100px 0;
         }
 
-        .testimonial-grid {
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--secondary);
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
@@ -147,11 +189,6 @@
         }
 
         /* FAQ */
-        .faq {
-            padding: 80px 0;
-            background: white;
-        }
-
         .faq-item {
             margin-bottom: 20px;
             border-bottom: 1px solid #eee;
@@ -171,12 +208,16 @@
             transition: max-height 0.3s ease;
         }
 
-        /* Footer */
-        .footer {
-            background: #2d3436;
-            color: white;
-            padding: 60px 0;
-            text-align: center;
+        /* Animations */
+        [data-aos] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        [data-aos].aos-animate {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Buttons */
@@ -192,90 +233,113 @@
         }
 
         .btn-primary {
-            background: #00b894;
+            background: var(--secondary);
             color: white;
         }
 
         .btn-primary:hover {
-            background: #009d7a;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate {
-            animation: fadeIn 0.6s ease forwards;
+            background: #00a37c;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
 
-            .price-card {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
                 width: 100%;
+                left: 0 !important;
+                text-align: left !important;
+                padding-left: 50px;
+            }
+
+            .timeline-item::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 20px;
+                width: 20px;
+                height: 20px;
+                background: var(--secondary);
+                border-radius: 50%;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <h1 class="animate">🔥 Курс по API: Стань експертом за 2 місяці!</h1>
-            <p class="animate">Навчіться створювати та інтегрувати API професійного рівня</p>
-            <button class="btn btn-primary animate" style="margin-top: 30px;">Розпочати навчання</button>
+    <!-- Hero Section -->
+    <section id="hero" class="parallax">
+        <div class="parallax-overlay"></div>
+        <div class="hero-content container">
+            <h1 data-aos="fade-up">Професійна розробка API</h1>
+            <p data-aos="fade-up" data-aos-delay="200">З нуля до Senior-розробника за 2 місяці</p>
+            <button class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">Розпочати навчання</button>
         </div>
-    </header>
+    </section>
 
     <!-- Features -->
-    <section class="features">
+    <section class="section-padding">
         <div class="container">
-            <h2>Чому наш курс?</h2>
+            <h2 data-aos="fade-up">Наші переваги</h2>
             <div class="features-grid">
-                <div class="feature-card animate">
-                    <h3>👨💻 Практичний досвід</h3>
-                    <p>Реальні проекти та кейси з розробки API</p>
+                <div class="feature-card" data-aos="fade-up">
+                    <h3>🚀 Інтенсивне навчання</h3>
+                    <p>80% практики та реальні проекти</p>
                 </div>
-                <div class="feature-card animate">
-                    <h3>🎓 Сертифікат</h3>
-                    <p>Офіційне підтвердження ваших навичок</p>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>👨💻 Персональний ментор</h3>
+                    <p>Індивідуальні консультації та перевірка коду</p>
                 </div>
-                <div class="feature-card animate">
-                    <h3>🤝 Підтримка</h3>
-                    <p>Персональний ментор та спільнота</p>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <h3>🎓 Гарантія працевлаштування</h3>
+                    <p>Допомога з резюме та співбесідами</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
-    <section class="pricing">
+    <!-- Timeline -->
+    <section class="timeline section-padding">
         <div class="container">
-            <h2>Варіанти навчання</h2>
+            <h2 data-aos="fade-up">Програма курсу</h2>
+            <div class="timeline-item" data-aos="fade-right">
+                <h3>Тиждень 1-2: Основи REST API</h3>
+                <p>HTTP методи, статус коди, автентифікація</p>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+                <h3>Тиждень 3-4: Розширена функціональність</h3>
+                <p>Пагінація, кешування, документація Swagger</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section-padding">
+        <div class="container">
+            <h2 data-aos="fade-up">Варіанти навчання</h2>
             <div class="pricing-cards">
-                <div class="price-card animate">
-                    <h3>Груповий курс</h3>
+                <div class="price-card" data-aos="fade-up">
+                    <h3>Група до 5 осіб</h3>
                     <div class="price">4 500 грн</div>
-                    <ul style="list-style: none; margin-bottom: 30px;">
-                        <li>✔️ До 5 людей у групі</li>
-                        <li>✔️ 12 практичних занять</li>
-                        <li>✔️ Доступ до матеріалів</li>
+                    <ul>
+                        <li>✓ 12 практичних занять</li>
+                        <li>✓ Доступ до матеріалів</li>
+                        <li>✓ Чат з ментором</li>
                     </ul>
                     <button class="btn btn-primary">Обрати</button>
                 </div>
-
-                <div class="price-card animate">
+                <div class="price-card" data-aos="fade-up" data-aos-delay="200">
                     <h3>Індивідуальний</h3>
                     <div class="price">5 500 грн</div>
-                    <ul style="list-style: none; margin-bottom: 30px;">
-                        <li>✔️ Персональний графік</li>
-                        <li>✔️ 16 практичних занять</li>
-                        <li>✔️ Підтримка 24/7</li>
+                    <ul>
+                        <li>✓ Персональний графік</li>
+                        <li>✓ 16 практичних занять</li>
+                        <li>✓ Підтримка 24/7</li>
                     </ul>
                     <button class="btn btn-primary">Обрати</button>
                 </div>
@@ -284,15 +348,15 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
+    <section class="section-padding">
         <div class="container">
-            <h2>Відгуки випускників</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card animate">
+            <h2 data-aos="fade-up">Відгуки студентів</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up">
                     <h4>Андрій, Backend Developer</h4>
                     <p>"Найкращий курс з API, який я проходив. Реальна практика та корисні кейси."</p>
                 </div>
-                <div class="testimonial-card animate">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
                     <h4>Олена, Team Lead</h4>
                     <p>"Ідеальне поєднання теорії та практики. Рекомендую всім розробникам!"</p>
                 </div>
@@ -301,33 +365,42 @@
     </section>
 
     <!-- FAQ -->
-    <section class="faq">
+    <section class="section-padding">
         <div class="container">
-            <h2>Часті запитання</h2>
+            <h2 data-aos="fade-up">Часті запитання</h2>
             <div class="faq-list">
-                <div class="faq-item animate">
+                <div class="faq-item" data-aos="fade-up">
                     <div class="faq-question">
                         <h4>Який рівень підготовки потрібен?</h4>
                         <span>▼</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Досвіду програмування на рівні базового синтаксису мови буде достатньо.</p>
+                        <p>Базове знання мови програмування (Python/JavaScript) та основ веб-розробки.</p>
                     </div>
                 </div>
-                <!-- Add more FAQ items -->
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="section-padding" style="background: var(--dark); color: white;">
         <div class="container">
-            <p>© 2024 Курси API. Всі права захищені</p>
-            <p>Контакти: example@api-course.com</p>
+            <p data-aos="fade-up">© 2024 Професійний курс API. Всі права захищені</p>
         </div>
     </footer>
 
     <script>
+        // Parallax Effect
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                element.style.backgroundPositionY = -(scrolled * speed) + 'px';
+            });
+        });
+
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', () => {
@@ -340,12 +413,12 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
+                    entry.target.classList.add('aos-animate');
                 }
             });
         });
 
-        document.querySelectorAll('.animate').forEach((el) => {
+        document.querySelectorAll('[data-aos]').forEach(el => {
             observer.observe(el);
         });
     </script>
